@@ -54,6 +54,14 @@
   - Delivers in required formats
 - **Tools**: Stable Diffusion API, DALL-E
 
+### 6. Publisher
+- **Role**: Publishes content to platforms
+- **Description**:
+  - Publishes content to WordPress or social media platforms
+  - Ensures proper formatting and metadata
+  - Tracks publishing status
+- **Tools**: WordPress API, Social Media APIs
+
 ## Workflow
 
 ```mermaid
@@ -62,3 +70,10 @@ flowchart LR
     B --> C[Content Creator]
     C --> D[SEO Validator]
     D --> E[Image Generator]
+    E --> F[Publisher]
+```
+
+---
+
+## Additional Notes
+This document combines details from both local and remote branches to provide a comprehensive overview of the AI Content Agency workflow and agent specifications.
