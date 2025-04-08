@@ -1,79 +1,48 @@
 # AI Content Agency
 
-## Agents
+The AI Content Agency project automates the process of content generation, including research, extraction, creation, validation, and image generation. This repository is structured to ensure modularity and ease of use.
 
-### 1. Researcher
-- **Role**: Performs targeted searches using provided keywords
-- **Description**: 
-  - Receives exact keywords from user input
-  - Searches Google and other approved sources
-  - Filters results by relevance and recency
-  - Returns clean list of URLs with metadata
-- **Tools**: Google Search API, Serper API
+## Project Structure
 
-### 2. Extractor
-- **Role**: Analyzes collected pages to extract core information
-- **Description**:
-  - Visits each URL from Researcher
-  - Identifies and extracts main content
-  - Detects primary keywords and key phrases
-  - Creates standardized summaries
-  - Removes duplicate information
-- **Tools**: BeautifulSoup, Readability-lxml
-
-### 3. Content Creator
-- **Role**: Generates original, SEO-optimized content with image description
-- **Description**:
-  - Takes extracted summaries as input
-  - Produces completely original content
-  - Ensures logical flow and accuracy
-  - Optimizes for search engines
-  - Creates detailed image description
-  - Maintains consistent tone
-- **Tools**: NextaX1.1.5B, Grammarly API
-
-### 4. SEO Validator
-- **Role**: Verifies content meets search engine requirements
-- **Description**:
-  - Checks keyword usage and density
-  - Verifies proper heading structure
-  - Ensures mobile-friendliness
-  - Validates readability score
-  - Confirms meta elements
-  - Flags any potential issues
-- **Tools**: Yoast SEO, Moz API
-
-### 5. Image Generator
-- **Role**: Creates visuals based on content descriptions
-- **Description**:
-  - Receives detailed image description
-  - Generates multiple style options
-  - Ensures proper dimensions
-  - Maintains brand consistency
-  - Optimizes file size
-  - Delivers in required formats
-- **Tools**: Stable Diffusion API, DALL-E
-
-### 6. Publisher
-- **Role**: Publishes content to platforms
-- **Description**:
-  - Publishes content to WordPress or social media platforms
-  - Ensures proper formatting and metadata
-  - Tracks publishing status
-- **Tools**: WordPress API, Social Media APIs
-
-## Workflow
-
-```mermaid
-flowchart LR
-    A[Researcher] --> B[Extractor]
-    B --> C[Content Creator]
-    C --> D[SEO Validator]
-    D --> E[Image Generator]
-    E --> F[Publisher]
+```
+/Agency
+├── apis.py               # API keys and configurations
+├── Main.ipynb            # Main notebook for experimentation
+├── README.md             # Project overview and documentation
+├── requirements.txt      # Project dependencies
+├── RunAgents.ipynb       # Notebook to run all agents
+├── src/                  # Source code
+│   ├── __init__.py       # Makes src a package
+│   ├── agents/           # Contains agent implementations
+│   │   ├── __init__.py   # Makes agents a package
+│   │   ├── Researcher.py # Researcher agent
+│   │   ├── Extractor.py  # Extractor agent
+│   │   ├── ContentCreator.py # Content Creator agent
+│   │   ├── SEOValidator.py  # SEO Validator agent
+│   │   ├── ImageGenerator.py # Image Generator agent
+│   ├── tools/            # Contains tool implementations
+│   │   ├── __init__.py   # Makes tools a package
+│   │   ├── GoogleSearchTool.py # Google Search tool
+│   │   ├── SerperTool.py      # Serper API tool
+│   │   ├── BeautifulSoupTool.py # BeautifulSoup tool
+│   │   ├── ReadabilityTool.py   # Readability tool
+│   │   ├── StableDiffusionTool.py # Stable Diffusion tool
 ```
 
----
+## How to Use
 
-## Additional Notes
-This document combines details from both local and remote branches to provide a comprehensive overview of the AI Content Agency workflow and agent specifications.
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Add your API keys to `apis.py`.
+4. Run the `RunAgents.ipynb` notebook to execute the pipeline.
+
+## Features
+
+- **Researcher**: Performs targeted searches using keywords.
+- **Extractor**: Extracts and summarizes content from URLs.
+- **Content Creator**: Generates SEO-optimized content.
+- **SEO Validator**: Validates content for SEO compliance.
+- **Image Generator**: Creates images based on descriptions.

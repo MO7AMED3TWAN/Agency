@@ -1,6 +1,15 @@
-crewai[tools,agentops]==0.95.0
-tavily-python 
-scrapegraph-py
-pydantic
-typing
-scrapegraph_py
+# Requirements for the AI Content Agency Project
+
+# Core dependencies
+crewai==1.0.0
+requests==2.28.2
+beautifulsoup4==4.12.2
+readability-lxml==0.8.1
+transformers==4.28.0
+
+# Additional dependencies for tools
+pandas==1.5.3
+numpy==1.24.2
+
+# Monitoring and logging
+agentops==0.3.0
