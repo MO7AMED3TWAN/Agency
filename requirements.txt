@@ -1,0 +1,6 @@
+crewai[tools,agentops]==0.95.0
+tavily-python 
+scrapegraph-py
+pydantic
+typing
+scrapegraph_py
